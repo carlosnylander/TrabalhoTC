@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Validação de Entradas</title>
+<style>
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    input[type="text"] {
+        width: 300px;
+        margin-bottom: 10px;
+    }
+    button {
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<h2>Formulário de Validação</h2>
+
+<form id="formulario">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome">
+
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email">
+
+    <label for="senha">Senha:</label>
+    <input type="text" id="senha" name="senha">
+
+    <label for="cpf">CPF:</label>
+    <input type="text" id="cpf" name="cpf">
+
+    <label for="telefone">Telefone:</label>
+    <input type="text" id="telefone" name="telefone">
+
+    <label for="dataHora">Data e Horário:</label>
+    <input type="text" id="dataHora" name="dataHora">
+
+    <label for="numeroReal">Número Real:</label>
+    <input type="text" id="numeroReal" name="numeroReal">
+
+    <button type="button" onclick="validarFormulario()">Validar</button>
+</form>
+
+<script>
+    // Expressões regulares para validar diferentes tipos de entrada
+    const regexValidations = {
+        nome: /^[A-Z][a-z]*(?: [A-Z][a-z]*){0,1} [A-Z][a-z]*$/,
+        email: /^[^\s@]+@[^\s@]+\.(?:com\.br|br)$/,
+        senha: /^(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{8}$/,
+        cpf: /^\d{3}\.\d{3}\.\d{3}-\d{2}$/,
+        telefone: /^(\(\d{2}\) 9\d{4}-\d{4}|\(\d{2}\) 9\d{8}|\d{2} 9\d{8})$/,
+        dataHora: /^(0[1-9]|[1-2][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4} (0\d|1\d|2[0-3]):([0-5]\d):([0-5]\d)$/,
+        numeroReal: /^([-+]?[0-9]+(\.[0-9]+)?|[+-]?[0-9]*\.[0-9]+)$/
+    };
+
+    // Função para validar a entrada
+    function validateInput(input, type) {
+        const regex = regexValidations[type];
+        return regex.test(input);
+    }
+
+    // Função para validar o formulário
+    function validarFormulario() {
+        const inputs = document.querySelectorAll('input');
+        inputs.forEach(input => {
+            const tipo = input.getAttribute('name');
+            const valor = input.value;
+            const isValid = validateInput(valor, tipo);
+            if (!isValid) {
+                alert(`O valor '${valor}' no campo '${tipo}' não é válido.`);
+                input.focus();
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
