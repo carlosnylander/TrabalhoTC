@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="PaiseFilhos.js"></script>
+<title>Análise de Arranjos Familiares</title>
+<style>
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    input[type="text"] {
+        width: 300px;
+        margin-bottom: 10px;
+    }
+    button {
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+    #results {
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+
+<h2>Análise de Arranjos Familiares</h2>
+
+<form id="familiaForm">
+    <label for="familiaInput">Cadeia de Família:</label>
+    <input type="text" id="familiaInput" name="familia">
+    <button type="button" onclick="analiseFamilia()">Analisar</button>
+</form>
+
+<div id="results"></div>
+
+<script>
+    /* function isCasalHeterossexualMaisVelhoQueFilhos(familia) {
+        // Implementação da função...
+    }
+
+    function isCasalHeterossexualMaisVelhoQueFilhosComFilhasImpares(familia) {
+        // Implementação da função...
+    }
+
+    function isCasalHeterossexualMaisVelhoQueFilhosComFilhaMaisVelhaMulherEFilhoMaisNovoHomem(familia) {
+        // Implementação da função...
+    }
+
+    function isCasalHomossexualMaisVelhoQueFilhosComSeisFilhosCasais(familia) {
+        // Implementação da função...
+    }
+
+    function isCasalHomossexualMaisVelhoQueFilhosComSexoAlternado(familia) {
+        // Implementação da função...
+    }
+
+    function isCasalHomossexualMaisVelhoQueFilhosSemDoisHomensConsecutivos(familia) {
+        // Implementação da função...
+    }
+
+    function analiseFamilia() {
+        const familiaInput = document.getElementById('familiaInput').value;
+        const resultsDiv = document.getElementById('results');
+        resultsDiv.innerHTML = '';
+
+        let resultados = {};
+
+        resultados['a'] = isCasalHeterossexualMaisVelhoQueFilhos(familiaInput);
+        resultados['b'] = isCasalHeterossexualMaisVelhoQueFilhosComFilhasImpares(familiaInput);
+        resultados['c'] = isCasalHeterossexualMaisVelhoQueFilhosComFilhaMaisVelhaMulherEFilhoMaisNovoHomem(familiaInput);
+        resultados['d'] = isCasalHomossexualMaisVelhoQueFilhosComSeisFilhosCasais(familiaInput);
+        resultados['e'] = isCasalHomossexualMaisVelhoQueFilhosComSexoAlternado(familiaInput);
+        resultados['f'] = isCasalHomossexualMaisVelhoQueFilhosSemDoisHomensConsecutivos(familiaInput);
+
+        const resultsHTML = '<h3>Resultados:</h3>';
+        resultsHTML += '<ul>';
+        resultsHTML += `<li>a) Atende aos requisitos? ${resultados.a}</li>`;
+        resultsHTML += `<li>b) Atende aos requisitos? ${resultados.b}</li>`;
+        resultsHTML += `<li>c) Atende aos requisitos? ${resultados.c}</li>`;
+        resultsHTML += `<li>d) Atende aos requisitos? ${resultados.d}</li>`;
+        resultsHTML += `<li>e) Atende aos requisitos? ${resultados.e}</li>`;
+        resultsHTML += `<li>f) Atende aos requisitos? ${resultados.f}</li>`;
+        resultsHTML += '</ul>';
+
+        resultsDiv.innerHTML = resultsHTML;
+    } */
+</script>
+
+</body>
+</html>
